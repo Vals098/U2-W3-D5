@@ -1,14 +1,73 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Matcha Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <h1>Welcome to your matcha daily ritual</h1>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <script class="./scripts/matcha-index.js"></script>
+    <header>
+      <!-- HERO START -->
+      <section class="hero">
+        <!-- NAVBAR START -->
+        <nav class="navbar navbar-expand-lg matcha-nav">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img class="matcha-logo" src="https://cdn-icons-png.flaticon.com/512/6143/6143066.png" alt="matcha logo"></a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./matcha-dets.html">Features</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./matcha-bk.html">BackOffice</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!--  NAVBAR END -->
+        <div class="hero-content text-light">
+          <h1 class="fw-light">WELCOME TO YOUR MATCHA DAILY RITUAL</h1>
+          <h3 class="fs-5 fw-light">Experience the essence of authentic Japanese matcha</h3>
+        </div>
+      </section>
+      <!-- HERO END -->
+    </header>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col"></div>
+            </div>
+        </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./scripts/matcha-index.js"></script>
   </body>
 </html>
