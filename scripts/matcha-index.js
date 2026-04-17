@@ -36,10 +36,11 @@ const createProducts = function (products) {
 
   products.forEach((product) => {
     const newCard = document.createElement("div")
+    // give the col class directly to the div you are creating or you will have one empty div that breacks the bs grid
+    newCard.classList.add("col-6", "col-md-4", "col-lg-3", "my-4")
 
     newCard.innerHTML = `
-      <div class="col-6 col-md-4 col-lg-3 my-4">
-        <div class="card matcha-card h-100">
+      <div class="card matcha-card h-100">
           <img src="${product.imageUrl}" class="card-img-top">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">${product.name}</h5>
@@ -61,10 +62,21 @@ const createProducts = function (products) {
 
 getProducts()
 
-
-
 // CARD DETAILS BUTTON TO ITEM DETAIL PAGE LINK
 const goToDetail = function (id) {
   window.location.href = `matcha-dets.html?id=${id}`
 }
 
+// from U2-W1-D5 fixed and interactive navbar
+const navbar = document.querySelector(".index-nav")
+const hero = document.querySelector(".hero")
+
+window.addEventListener("scroll", () => {
+  const heroBottom = hero.offsetHeight
+
+  if (window.scrollY > heroBottom - 80) {
+    navbar.classList.add("scrolled")
+  } else {
+    navbar.classList.remove("scrolled")
+  }
+})

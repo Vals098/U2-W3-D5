@@ -1,33 +1,45 @@
 body {
   background-color: #fafaf7;
-  color: #2E4A34;
+  color: #2e4a34;
 }
 
 .matcha-logo {
-    max-width: 60px;
+  max-width: 60px;
 }
 
 .matcha-nav .nav-link,
 .matcha-nav,
 .matcha-nav .navbar-brand {
-    color: #FAFAF7;
+  color: #fafaf7;
 }
 .matcha-nav .nav-link:hover {
-    color: #c8e6c9;
+  color: #c8e6c9;
 }
 
 .matcha-nav .nav-link.active {
-    color: #a8e6a3;
+  color: #a8e6a3;
 }
 
 .matcha-nav {
-    background-color: #2E4A34;
+  background-color: #2e4a34;
 }
 
 /* HOMEPAGE */
-.matcha-nav.index-nav{
-    background-color: transparent;
+.matcha-nav.index-nav {
+  background-color: transparent;
+  transition: background-color 0.3s ease;
 }
+
+.index-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.matcha-nav.index-nav.scrolled {
+  background-color: #2e4a34;
+}
+
 
 .hero {
   min-height: 400px;
@@ -59,46 +71,45 @@ body {
   z-index: 1;
 }
 
-
 /* CARDS */
 .matcha-card {
-    border: none;
-    border-radius: 16px;
-    background-color: #FAFAF7;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    
-    transition: all 0.3s ease;
+  border: none;
+  border-radius: 16px;
+  background-color: #fafaf7;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  transition: all 0.3s ease;
 }
 
 .matcha-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 /* img */
 .matcha-card img {
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
-    height: 200px;
-    object-fit: cover;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  height: 200px;
+  object-fit: cover;
 }
 
 /* title */
 .matcha-card .card-title {
-    color: #2E4A34;
-    font-weight: 600;
+  color: #2e4a34;
+  font-weight: 600;
 }
 
 /* text */
 .matcha-card .card-text {
-    color: #5F5F5F;
-    font-size: 0.9em;
+  color: #5f5f5f;
+  font-size: 0.9em;
 }
 
 /* price */
 .matcha-card .price {
-    color: #4F7A52;
-    font-weight: bold;
+  color: #4f7a52;
+  font-weight: bold;
 }
 /* BUTTONS */
 .matcha-button {
@@ -106,9 +117,9 @@ body {
   border: none;
 }
 
-.matcha-button:hover{
-    background-color: #4F7A52;
-    color: #c8e6c9;
+.matcha-button:hover {
+  background-color: #4f7a52;
+  color: #c8e6c9;
 }
 
 /* BACKOFFICE PAGE */
@@ -123,4 +134,3 @@ body {
   border-color: #7bae7f;
   box-shadow: 0 0 0 2px rgba(123, 174, 127, 0.2);
 }
-
