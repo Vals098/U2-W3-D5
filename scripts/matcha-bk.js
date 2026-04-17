@@ -1,6 +1,9 @@
 const matchaURL = "https://striveschool-api.herokuapp.com/api/product/"
 const myKey =
   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OWUxZGQ2NjczOWY4NzAwMTU3YWIwODMiLCJpYXQiOjE3NzY0MDk5NTgsImV4cCI6MTc3NzYxOTU1OH0.-qJeuO-VKE8DlT11R-vB-C0jcfUgvSC2JsNHNeDvF2A"
+const params = new URLSearchParams(window.location.search)
+const id = params.get("id")
+
 
 class Product {
   constructor(_name, _description, _brand, _imageUrl, _price) {
@@ -37,10 +40,18 @@ form.addEventListener("submit", function (e) {
 
   //  IF THE ID DOESN'T EXIST:
   // create a new one using the form (POST)
-  fetch(matchaURL, {
-    // convert in JSON
+  let urlToUse
+  if (id) {
+      urlToUse = matchaURL + id
+      //  IF THE ID EXISTS:
+      // modify it (PUT)
+  } else {
+    urlToUse = matchaURL
+  }
+
+  fetch(urlToUse, {
+    method: id ? "PUT" : "POST",
     body: JSON.stringify(newProduct),
-    method: "POST",
     headers: {
       Authorization: myKey,
       "Content-Type": "application/json",
@@ -55,7 +66,8 @@ form.addEventListener("submit", function (e) {
     })
     .then((data) => {
       console.log(data)
-      alert("Product created!")
+    //   different alert message
+      alert(id ? "Product updated!" : "Product created!")
       form.reset()
     })
     .catch((error) => {
@@ -63,7 +75,33 @@ form.addEventListener("submit", function (e) {
     })
 })
 
-//  IF THE ID EXISTS:
-// modify it (PUT)
 
+if (id) {
+  fetch(matchaURL + id, {
+    headers: {
+      Authorization: myKey,
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => {
+      if (response.ok) {
+        return response.json()
+      } else {
+        throw new Error("Server has not accepted the product")
+      }
+    })
+    .then((product) => {
+      document.getElementById("name").value = product.name
+      document.getElementById("description").value = product.description
+      document.getElementById("brand").value = product.brand
+      document.getElementById("imageUrl").value = product.imageUrl
+      document.getElementById("price").value = product.price
+    })
+    .catch((error) => {
+      console.log(`Saving Error ${error}`)
+    })
+}
 
+const editProduct = (id) => {
+  window.location.href = `matcha-bk.html?id=${id}`
+}

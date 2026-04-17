@@ -47,7 +47,13 @@ const createProducts = function (products) {
             <p class="card-text">${product.description}</p>
             <div class="mt-auto d-flex justify-content-between align-items-center">
               <span class="price">€${product.price}</span>
-              <button class="btn matcha-btn" onclick="goToDetail('${product._id}')">
+              <button
+              class="btn matcha-button"
+              onclick="editProduct('${product._id}')"
+               >
+              Edit
+              </button>
+              <button class="btn matcha-button" onclick="goToDetail('${product._id}')">
                 Details
               </button>
             </div>
@@ -62,7 +68,14 @@ const createProducts = function (products) {
 
 getProducts()
 
+
+
 // CARD DETAILS BUTTON TO ITEM DETAIL PAGE LINK
 const goToDetail = function (id) {
   window.location.href = `matcha-dets.html?id=${id}`
+}
+// CARD EDIT BUTTON TO ITEM BK PAGE LINK (edit version)
+function editProduct(id) {
+  console.log("CLICK", id)
+  window.location.href = `matcha-bk.html?id=${id}`
 }
