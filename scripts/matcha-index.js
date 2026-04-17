@@ -7,7 +7,6 @@ const getProducts = function () {
     // method: 'GET'
     headers: {
       Authorization: myKey,
-      "Content-Type": "application/json",
     },
   })
     .then((response) => {
@@ -47,12 +46,6 @@ const createProducts = function (products) {
             <p class="card-text">${product.description}</p>
             <div class="mt-auto d-flex justify-content-between align-items-center">
               <span class="price">€${product.price}</span>
-              <button
-              class="btn matcha-button"
-              onclick="editProduct('${product._id}')"
-               >
-              Edit
-              </button>
               <button class="btn matcha-button" onclick="goToDetail('${product._id}')">
                 Details
               </button>
@@ -74,8 +67,4 @@ getProducts()
 const goToDetail = function (id) {
   window.location.href = `matcha-dets.html?id=${id}`
 }
-// CARD EDIT BUTTON TO ITEM BK PAGE LINK (edit version)
-function editProduct(id) {
-  console.log("CLICK", id)
-  window.location.href = `matcha-bk.html?id=${id}`
-}
+
